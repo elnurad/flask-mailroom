@@ -24,8 +24,6 @@ def create():
     if request.method=="POST":
         donation = request.form['donation']#works
         name = request.form['name']
-        
-    
         donor = Donor.get(Donor.name==name)
         new_donation = Donation(value=donation, donor=donor)
         new_donation.save()
